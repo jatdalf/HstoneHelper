@@ -1,5 +1,17 @@
 export type AchievementFilter = "all" | "pending" | "completed";
-export type ExpansionId = "violet-hold" | "alterac-valley";
+export type ExpansionId =
+  | "violet-hold"
+  | "cataclysm"
+  | "badlands" 
+  | "time-travel"
+  | "lost-city"
+  | "emerald-dream"
+  | "whizbang"
+  | "titans"
+  | "paradise"
+  | "great-dark-beyond"
+  | "alterac-valley"
+;
 
 export interface Achievement {
   id: string;

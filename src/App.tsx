@@ -71,15 +71,23 @@ const earnedPoints = completedAchievements.reduce( (total, achievement) => total
 <label className="field">
   <span>Expansión</span>
 
-  <select
+  <select className="expansionSelect"
     value={expansionFilter}
     onChange={(event) =>
       setExpansionFilter(event.target.value as ExpansionFilter)
     }
   >
-    <option value="violet-hold">Bastión Violeta</option>
-    <option value="alterac-valley">Alterac Valley</option>
-    <option value="all">Todas las expansiones</option>
+  <option value="violet-hold">Bastión Violeta</option>
+  <option value="cataclysm">Cataclysm</option>
+  <option value="timetravel">Time Travel</option>
+  <option value="lost-city">Lost City</option>
+  <option value="emerald-dream">Emerald Dream</option>
+  <option value="great-dark-beyond">Great Dark Beyond</option>
+  <option value="paradise">Paradise</option>
+  <option value="whizbang">whizbang Workshop</option>
+  <option value="titans">Titans</option>
+  <option value="alterac-valley">Alterac Valley</option>
+  <option value="all">Todas las expansiones</option>
   </select>
 </label>
             <div>
