@@ -26,7 +26,13 @@
   justify-content: space-between;
   gap: 24px;
 }
+.field{
+  color: rgb(221 214 254 / 70%);
+}
+.expansionSelect{
+  margin-left: 5px;
 
+}
 .brand {
   display: flex;
   align-items: center;
