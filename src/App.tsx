@@ -7,6 +7,22 @@ import { achievements } from "./data/achievements";
 import { useProfiles } from "./hooks/useProfiles";
 import type {Achievement, AchievementFilter, ExpansionId,} from "./types";
 
+const HERO_CLASS_ORDER = [
+  "Death Knight",
+  "Demon Hunter",
+  "Druid",
+  "Hunter",
+  "Mage",
+  "Paladin",
+  "Priest",
+  "Rogue",
+  "Shaman",
+  "Warlock",
+  "Warrior",
+  "Dual Class",
+  "Neutral",
+];
+
 function App() {
   const {
     profiles,
@@ -25,7 +41,7 @@ function App() {
 
 // Primero seleccionamos la expansión.
 const expansionAchievements = useMemo(() => {
-  return achievements.filter((achievement) =>
+  return achievements.filter((achievement) => 
       expansionFilter === "all" || achievement.expansion === expansionFilter,);
 }, [expansionFilter]);
 
@@ -53,12 +69,43 @@ const groupedAchievements = useMemo(() => {
 }, [filteredAchievements]);
 
 // Progreso correspondiente a la expansión seleccionada.
-const completedAchievements = expansionAchievements.filter(
-  (achievement) => completedIds.includes(achievement.id),);
-const progress = expansionAchievements.length === 0 ? 0 : Math.round(
-  (completedAchievements.length / expansionAchievements.length) * 100,);
-const earnedXp = completedAchievements.reduce((total, achievement) => total + achievement.xp, 0,);
-const earnedPoints = completedAchievements.reduce( (total, achievement) => total + achievement.points, 0,);
+// Completados en la expansión seleccionada.
+const completedExpansionAchievements = expansionAchievements.filter(
+  (achievement) => completedIds.includes(achievement.id),
+);
+
+const expansionProgress =
+  expansionAchievements.length === 0
+    ? 0
+    : Math.round(
+        (completedExpansionAchievements.length /
+          expansionAchievements.length) *
+          100,
+      );
+
+// Completados en toda la aplicación.
+const completedGeneralAchievements = achievements.filter(
+  (achievement) => completedIds.includes(achievement.id),
+);
+
+const generalProgress =
+  achievements.length === 0
+    ? 0
+    : Math.round(
+        (completedGeneralAchievements.length /
+          achievements.length) *
+          100,
+      );
+
+const earnedXp = completedExpansionAchievements.reduce(
+  (total, achievement) => total + achievement.xp,
+  0,
+);
+
+const earnedPoints = completedExpansionAchievements.reduce(
+  (total, achievement) => total + achievement.points,
+  0,
+);
 
   return (
     <main className="app">
@@ -71,23 +118,29 @@ const earnedPoints = completedAchievements.reduce( (total, achievement) => total
 <label className="field">
   <span>Expansión</span>
 
-  <select className="expansionSelect"
-    value={expansionFilter}
-    onChange={(event) =>
-      setExpansionFilter(event.target.value as ExpansionFilter)
-    }
-  >
-  <option value="violet-hold">Bastión Violeta</option>
-  <option value="cataclysm">Cataclysm</option>
-  <option value="timetravel">Time Travel</option>
-  <option value="lost-city">Lost City</option>
-  <option value="emerald-dream">Emerald Dream</option>
-  <option value="great-dark-beyond">Great Dark Beyond</option>
-  <option value="paradise">Paradise</option>
-  <option value="whizbang">whizbang Workshop</option>
-  <option value="titans">Titans</option>
-  <option value="alterac-valley">Alterac Valley</option>
-  <option value="all">Todas las expansiones</option>
+  <select className="expansionSelect" value={expansionFilter} onChange={(event) =>
+      setExpansionFilter(event.target.value as ExpansionFilter)}>
+        
+<option value="violet-hold">Bastión Violeta</option>
+<option value="cataclysm">Cataclysm</option>
+<option value="time-travel">Across the Timeways</option>
+<option value="lost-city">The Lost City of Un'Goro</option>
+<option value="emerald-dream">Into the Emerald Dream</option>
+<option value="great-dark-beyond">The Great Dark Beyond</option>
+<option value="paradise">Perils in Paradise</option>
+<option value="whizbang">Whizbang's Workshop</option>
+<option value="badlands">Showdown in the Badlands</option>
+<option value="titans">Titans</option>
+<option value="festival-of-legends">Festival of Legends</option>
+<option value="lich-king">March of the Lich King</option>
+<option value="nathria">Murder at Castle Nathria</option>
+<option value="sunken-city">Voyage to the Sunken City</option>
+<option value="alterac-valley">Fractured in Alterac Valley</option>
+<option value="stormwind">United in Stormwind</option>
+<option value="barrens">Forged in the Barrens</option>
+<option value="darkmoon">Madness at the Darkmoon Faire</option>
+<option value="all">Todas las expansiones</option>
+
   </select>
 </label>
             <div>
@@ -153,24 +206,22 @@ const earnedPoints = completedAchievements.reduce( (total, achievement) => total
             <section className="progress-section">
               <div className="progress-card">
                 <div className="progress-heading">
-                  <div>
-                    <p>
-                      Progreso de <strong>{currentProfile.name}</strong>
-                    </p>
+                <div>
+                  <p>Progreso de <strong>{currentProfile.name}</strong></p>
+                  <h2>{completedExpansionAchievements.length}
+                    <span>{" "} de {expansionAchievements.length} logros</span>
+                  </h2>
 
-                    <h2>
-                      {completedAchievements.length}
-                      <span> de {achievements.length} logros</span>
-                    </h2>
-                  </div>
-
-                  <strong className="progress-percentage">
-                    {progress}%
-                  </strong>
+                  <small className="general-progress">
+                    Progreso general: {completedGeneralAchievements.length} de{" "}
+                    {achievements.length} logros · {generalProgress}%
+                  </small>
                 </div>
+                <strong className="progress-percentage">{expansionProgress}%</strong>
+              </div>
 
                 <div className="progress-bar">
-                  <div style={{ width: `${progress}%` }} />
+                  <div style={{ width: `${expansionProgress}%` }} />
                 </div>
               </div>
 
@@ -225,8 +276,11 @@ const earnedPoints = completedAchievements.reduce( (total, achievement) => total
             </section>
 
             <div className="achievement-groups">
-              {Object.entries(groupedAchievements).map(
-                ([heroClass, classAchievements]) => (
+              {HERO_CLASS_ORDER.filter((heroClass) =>
+                  (groupedAchievements[heroClass]?.length ?? 0) > 0,).map((heroClass) => {
+                const classAchievements = groupedAchievements[heroClass];
+
+                return (
                   <section className="achievement-group" key={heroClass}>
                     <div className="class-title">
                       <span />
@@ -247,8 +301,8 @@ const earnedPoints = completedAchievements.reduce( (total, achievement) => total
                       ))}
                     </div>
                   </section>
-                ),
-              )}
+                );
+              })}
 
               {filteredAchievements.length === 0 && (
                 <div className="empty-filter">

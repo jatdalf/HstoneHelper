@@ -33,6 +33,16 @@
   margin-left: 5px;
 
 }
+.achievement-groups {
+  overflow-anchor: none;
+}
+.general-progress {
+  display: block;
+  margin-top: 7px;
+  color: rgba(203, 194, 234, 0.66);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
 .brand {
   display: flex;
   align-items: center;
