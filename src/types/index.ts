@@ -10,7 +10,14 @@ export type ExpansionId =
   | "titans"
   | "paradise"
   | "great-dark-beyond"
+  | "festival-of-legends"
+  | "lich-king"
+  | "nathria"
+  | "sunken-city"
   | "alterac-valley"
+  | "stormwind"
+  | "barrens"
+  | "darkmoon"
 ;
 
 export interface Achievement {

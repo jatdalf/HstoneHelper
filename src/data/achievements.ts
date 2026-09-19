@@ -10,6 +10,13 @@ import {greatDarkBeyondAchievements} from "./great-dark-beyond"
 import {paradiseAchievements} from "./paradise"
 import {whizbangAchievements} from "./whizbang"
 import {titansAchievements} from "./titans"
+import { festivalOfLegendsAchievements } from "./festival-of-legends";
+import { lichKingAchievements } from "./lich-king";
+import { nathriaAchievements } from "./nathria";
+import { sunkenCityAchievements } from "./sunken-city";
+import { stormwindAchievements } from "./stormwind";
+import { barrensAchievements } from "./barrens";
+import { darkmoonAchievements } from "./darkmoon";
 
 export const achievements: Achievement[] = [
   ...violetHoldAchievements,
@@ -22,5 +29,12 @@ export const achievements: Achievement[] = [
   ...whizbangAchievements,
   ...badlandsAchievements,
   ...titansAchievements,
+  ...festivalOfLegendsAchievements,
+  ...lichKingAchievements,
+  ...nathriaAchievements,
+  ...sunkenCityAchievements,
   ...alteracValleyAchievements, 
+  ...stormwindAchievements,
+  ...barrensAchievements,
+  ...darkmoonAchievements,
 ];
