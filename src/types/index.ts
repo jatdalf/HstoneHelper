@@ -18,6 +18,14 @@ export type ExpansionId =
   | "stormwind"
   | "barrens"
   | "darkmoon"
+  | "scholomance"
+  | "outland"
+  | "dragons"
+  | "uldum"
+  | "shadows"
+  | "wolf"
+  | "hydra"
+  | "gryphon"
 ;
 
 export interface Achievement {

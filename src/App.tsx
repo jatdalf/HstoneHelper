@@ -19,8 +19,10 @@ const HERO_CLASS_ORDER = [
   "Shaman",
   "Warlock",
   "Warrior",
+  "Classes",
   "Dual Class",
   "Neutral",
+  "Feats of Strength",
 ];
 
 function App() {
@@ -120,7 +122,7 @@ const earnedPoints = completedExpansionAchievements.reduce(
 
   <select className="expansionSelect" value={expansionFilter} onChange={(event) =>
       setExpansionFilter(event.target.value as ExpansionFilter)}>
-        
+
 <option value="violet-hold">Bastión Violeta</option>
 <option value="cataclysm">Cataclysm</option>
 <option value="time-travel">Across the Timeways</option>
@@ -139,8 +141,15 @@ const earnedPoints = completedExpansionAchievements.reduce(
 <option value="stormwind">United in Stormwind</option>
 <option value="barrens">Forged in the Barrens</option>
 <option value="darkmoon">Madness at the Darkmoon Faire</option>
+<option value="scholomance">Scholomance Academy</option>
+<option value="outland">Ashes of Outland</option>
+<option value="dragons">Descent of Dragons</option>
+<option value="uldum">Saviors of Uldum</option>
+<option value="shadows">Rise of Shadows</option>
+<option value="wolf">Core — Year of the Wolf</option>
+<option value="wolf">Core — Year of the Hydra</option>
+<option value="wolf">Core — Year of the Gryphon</option>
 <option value="all">Todas las expansiones</option>
-
   </select>
 </label>
             <div>
