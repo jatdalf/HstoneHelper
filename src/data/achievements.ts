@@ -17,6 +17,14 @@ import { sunkenCityAchievements } from "./sunken-city";
 import { stormwindAchievements } from "./stormwind";
 import { barrensAchievements } from "./barrens";
 import { darkmoonAchievements } from "./darkmoon";
+import { scholomanceAchievements } from "./scholomance";
+import { outlandAchievements } from "./outland";
+import { dragonsAchievements } from "./dragons";
+import { uldumAchievements } from "./uldum";
+import { shadowsAchievements } from "./shadows";
+import { wolfAchievements } from "./wolf";
+import { hydraAchievements } from "./hydra";
+import { gryphonAchievements } from "./gryphon";
 
 export const achievements: Achievement[] = [
   ...violetHoldAchievements,
@@ -37,4 +45,12 @@ export const achievements: Achievement[] = [
   ...stormwindAchievements,
   ...barrensAchievements,
   ...darkmoonAchievements,
+  ...scholomanceAchievements,
+  ...outlandAchievements,
+  ...dragonsAchievements,
+  ...uldumAchievements,
+  ...shadowsAchievements,
+  ...wolfAchievements,
+  ...hydraAchievements,
+  ...gryphonAchievements,
 ];
