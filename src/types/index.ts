@@ -27,6 +27,13 @@ export type ExpansionId =
   | "hydra"
   | "gryphon"
 ;
+export type Language = "es" | "en";
+
+export interface AchievementTranslation {
+  name: string;
+  description: string;
+  cards?: string[];
+}
 
 export interface Achievement {
   id: string;
