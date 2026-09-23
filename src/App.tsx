@@ -63,12 +63,8 @@ const groupedAchievements = useMemo(() => {
   return filteredAchievements.reduce<Record<string, Achievement[]>>(
     (groups, achievement) => {
       const currentGroup = groups[achievement.heroClass] ?? [];
-      return {
-        ...groups,
-        [achievement.heroClass]: [...currentGroup, achievement,],
-      };
-    },
-    {},
+      return {...groups, [achievement.heroClass]: [...currentGroup, achievement,],};
+   },{},
   );
 }, [filteredAchievements]);
 
@@ -78,38 +74,19 @@ const completedExpansionAchievements = expansionAchievements.filter(
   (achievement) => completedIds.includes(achievement.id),
 );
 
-const expansionProgress =
-  expansionAchievements.length === 0
-    ? 0
-    : Math.round(
-        (completedExpansionAchievements.length /
-          expansionAchievements.length) *
-          100,
-      );
+const expansionProgress = expansionAchievements.length === 0 ? 0 : Math.round(
+  (completedExpansionAchievements.length / expansionAchievements.length) * 100,
+);
 
 // Completados en toda la aplicación.
 const completedGeneralAchievements = achievements.filter(
-  (achievement) => completedIds.includes(achievement.id),
-);
-
-const generalProgress =
-  achievements.length === 0
-    ? 0
-    : Math.round(
-        (completedGeneralAchievements.length /
-          achievements.length) *
-          100,
-      );
-
+  (achievement) => completedIds.includes(achievement.id),);
+const generalProgress = achievements.length === 0 ? 0 : Math.round(
+  (completedGeneralAchievements.length / achievements.length) * 100,);
 const earnedXp = completedExpansionAchievements.reduce(
-  (total, achievement) => total + achievement.xp,
-  0,
-);
-
+  (total, achievement) => total + achievement.xp, 0,);
 const earnedPoints = completedExpansionAchievements.reduce(
-  (total, achievement) => total + achievement.points,
-  0,
-);
+  (total, achievement) => total + achievement.points, 0,);
 const copy = {
   es: {
     expansion: "Expansión",
@@ -120,8 +97,7 @@ const copy = {
     user: "Usuario",
     addUser: "Agregar usuario",
     createFirstUser: "Creá tu primer usuario",
-    independentProgress:
-      "El progreso de cada jugador se guarda de manera independiente.",
+    independentProgress: "El progreso de cada jugador se guarda de manera independiente.",
     progressOf: "Progreso de",
     achievements: "logros",
     overallProgress: "Progreso general",
@@ -144,8 +120,7 @@ const copy = {
     user: "User",
     addUser: "Add user",
     createFirstUser: "Create your first user",
-    independentProgress:
-      "Each player's progress is stored independently.",
+    independentProgress: "Each player's progress is stored independently.",
     progressOf: "Progress for",
     achievements: "achievements",
     overallProgress: "Overall progress",
@@ -169,13 +144,11 @@ const expansionOptions: Array<{
     value: "violet-hold",
     es: "Fuga del Bastión Violeta",
     en: "Violet Hold",
-  },
-  {
+  },{
     value: "cataclysm",
     es: "Cataclismo",
     en: "Cataclysm",
-  },
-  {
+  },{
     value: "time-travel",
     es: "A través de las líneas temporales",
     en: "Across the Timeways",

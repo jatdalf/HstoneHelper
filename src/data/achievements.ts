@@ -1,15 +1,15 @@
 import type { Achievement } from "../types";
-import { alteracValleyAchievements } from "./alterac-valley";
-import { cataclysmAchievements } from "./cataclysm";
 import { violetHoldAchievements } from "./violet-hold";
+import { cataclysmAchievements } from "./cataclysm";
+import { timeTravelAchievements } from "./timetravel"
+import { alteracValleyAchievements } from "./alterac-valley";
 import { badlandsAchievements } from "./badlands";
-import {timeTravelAchievements} from "./timetravel"
-import {lostCityAchievements} from "./lost-city"
-import {emeraldDreamAchievements} from "./emerald-dream"
-import {greatDarkBeyondAchievements} from "./great-dark-beyond"
-import {paradiseAchievements} from "./paradise"
-import {whizbangAchievements} from "./whizbang"
-import {titansAchievements} from "./titans"
+import { lostCityAchievements } from "./lost-city"
+import { emeraldDreamAchievements } from "./emerald-dream"
+import { greatDarkBeyondAchievements } from "./great-dark-beyond"
+import { paradiseAchievements } from "./paradise"
+import { whizbangAchievements } from "./whizbang"
+import { titansAchievements } from "./titans"
 import { festivalOfLegendsAchievements } from "./festival-of-legends";
 import { lichKingAchievements } from "./lich-king";
 import { nathriaAchievements } from "./nathria";

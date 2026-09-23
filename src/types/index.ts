@@ -2,8 +2,8 @@ export type AchievementFilter = "all" | "pending" | "completed";
 export type ExpansionId =
   | "violet-hold"
   | "cataclysm"
-  | "badlands" 
   | "time-travel"
+  | "badlands" 
   | "lost-city"
   | "emerald-dream"
   | "whizbang"
