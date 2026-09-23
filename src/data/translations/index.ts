@@ -1,10 +1,12 @@
 import type { Achievement, AchievementTranslation, Language, } from "../../types";
 import { violetHoldSpanishTranslations } from "./es/violet-hold";
 import { cataclysmSpanishTranslations } from "./es/cataclysm";
+import { timeTravelSpanishTranslations } from "./es/time-travel";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
   ...cataclysmSpanishTranslations,
+  ...timeTravelSpanishTranslations,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {
@@ -18,7 +20,6 @@ export function translateAchievement( achievement: Achievement, language: Langua
       };
     }
   }
-
   return {
     name: achievement.name,
     description: achievement.description,
