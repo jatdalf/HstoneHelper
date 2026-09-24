@@ -3,12 +3,14 @@ import { violetHoldSpanishTranslations } from "./es/violet-hold";
 import { cataclysmSpanishTranslations } from "./es/cataclysm";
 import { timeTravelSpanishTranslations } from "./es/time-travel";
 import { lostCitySpanishTranslations } from "./es/lost-city";
+import { emeraldDreamSpanishTranslations } from "./es/emerald-dream";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
   ...cataclysmSpanishTranslations,
   ...timeTravelSpanishTranslations,
   ...lostCitySpanishTranslations,
+  ...emeraldDreamSpanishTranslations,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {
