@@ -5,6 +5,7 @@ import { timeTravelSpanishTranslations } from "./es/time-travel";
 import { lostCitySpanishTranslations } from "./es/lost-city";
 import { emeraldDreamSpanishTranslations } from "./es/emerald-dream";
 import { greatDarkBeyondSpanishTranslations } from "./es/great-dark-beyond";
+import { paradiseSpanishTranslations } from "./es/paradise";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
@@ -13,6 +14,7 @@ const spanishTranslations: Record<string, AchievementTranslation> = {
   ...lostCitySpanishTranslations,
   ...emeraldDreamSpanishTranslations,
   ...greatDarkBeyondSpanishTranslations,
+  ...paradiseSpanishTranslations,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {
