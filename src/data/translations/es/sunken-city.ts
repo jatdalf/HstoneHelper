@@ -91,7 +91,266 @@ export const sunkenCitySpanishTranslations: Record<
     description: "Añade 30 hechizos a tu mano con Comandante Sivara.",
   },
   SC_MAGE_03_3: {
-        name: "Nosotros SÍ iniciamos el fuego",
+    name: "Concurso de deletreo",
+    description: "Añade 60 hechizos a tu mano con Comandante Sivara.",
+  },
+
+  SC_PALADIN_01_1: {
+    name: "Encantado de estar aquí",
+    description: "Restaura 20 de Salud en un turno con Makirrollo sagrado.",
+  },
+  SC_PALADIN_02_1: {
+    name: "Bajo el radar",
+    description: "Roba 5 Mecas con un solo Detector de radar.",
+  },
+  SC_PALADIN_03_1: {
+    name: "Ilumínalos",
+    description: "Activa el efecto de Kotori Hojaluz sobre 25 esbirros.",
+  },
+  SC_PALADIN_03_2: {
+    name: "Ilumínalos",
+    description: "Activa el efecto de Kotori Hojaluz sobre 50 esbirros.",
+  },
+  SC_PALADIN_03_3: {
+    name: "Ilumínalos",
+    description: "Activa el efecto de Kotori Hojaluz sobre 75 esbirros.",
+  },
+
+  SC_PRIEST_01_1: {
+    name: "Me haces dar vueltas",
+    description: "Destruye 12 esbirros con un solo Remolino.",
+  },
+  SC_PRIEST_02_1: {
+    name: "Psst... adora a N'Zoth",
+    description: "Inflige 100 de daño con Susurros de las profundidades.",
+  },
+  SC_PRIEST_03_1: {
+    name: "Engañado como un pez",
+    description: "Restaura 50 de Salud con Behemoth Aguascura.",
+  },
+  SC_PRIEST_03_2: {
+    name: "Engañado como un pez",
+    description: "Restaura 100 de Salud con Behemoth Aguascura.",
+  },
+  SC_PRIEST_03_3: {
+    name: "Engañado como un pez",
+    description: "Restaura 200 de Salud con Behemoth Aguascura.",
+  },
+
+  SC_ROGUE_01_1: {
+    name: "La pelea de comida salió mal",
+    description: "Destruye al héroe enemigo con Luchador fileteador.",
+  },
+  SC_ROGUE_02_1: {
+    name: "¡Pon el dinero en la bolsa!",
+    description:
+      "Saquea al enemigo 25 veces con Almirante pirata Anzuelotusk.",
+  },
+  SC_ROGUE_03_1: {
+    name: "Minijuego de pesca",
+    description:
+      "Roba 20 cartas que no comenzaron en tu mazo con De pesca.",
+  },
+  SC_ROGUE_03_2: {
+    name: "Minijuego de pesca",
+    description:
+      "Roba 40 cartas que no comenzaron en tu mazo con De pesca.",
+  },
+  SC_ROGUE_03_3: {
+    name: "Minijuego de pesca",
+    description:
+      "Roba 60 cartas que no comenzaron en tu mazo con De pesca.",
+  },
+
+  SC_SHAMAN_01_1: {
+    name: "Danza de los esbirros bajo la luna",
+    description: "Otorga Bioluminiscencia a 100 esbirros.",
+  },
+  SC_SHAMAN_02_1: {
+    name: "Aguas cálidas y gélidas",
+    description:
+      "Lanza un hechizo de Fuego, uno de Escarcha y uno de Naturaleza en el mismo turno mientras Resplandor de Azshara está en juego.",
+  },
+  SC_SHAMAN_03_1: {
+    name: "Frenesí alimenticio",
+    description: "Inflige 75 de daño con Pirañas de cardumen.",
+  },
+  SC_SHAMAN_03_2: {
+    name: "Frenesí alimenticio",
+    description: "Inflige 150 de daño con Pirañas de cardumen.",
+  },
+  SC_SHAMAN_03_3: {
+    name: "Frenesí alimenticio",
+    description: "Inflige 300 de daño con Pirañas de cardumen.",
+  },
+
+  SC_WARLOCK_01_1: {
+    name: "Menú de 75 platos",
+    description: "Destruye permanentemente 75 esbirros dentro de Gigafin.",
+  },
+  SC_WARLOCK_02_1: {
+    name: "Escamas a gran escala",
+    description: "Juega un Múrloc con 10 de Ataque como Brujo.",
+  },
+  SC_WARLOCK_03_1: {
+    name: "@\\*&%!",
+    description: "Inflige 50 de daño con Maldiciones abisales.",
+  },
+  SC_WARLOCK_03_2: {
+    name: "@\\*&%!",
+    description: "Inflige 150 de daño con Maldiciones abisales.",
+  },
+  SC_WARLOCK_03_3: {
+    name: "@\\*&%!",
+    description: "Inflige 450 de daño con Maldiciones abisales.",
+  },
+
+  SC_WARRIOR_01_1: {
+    name: "Mar de ladrones",
+    description:
+      "Reúne para Nellie, la Gran Trilladora una tripulación pirata cuyo costo total sea (14) o más.",
+  },
+  SC_WARRIOR_02_1: {
+    name: "Ciudad del valor",
+    description: "Roba 7 cartas con un solo Forjado en llamas.",
+  },
+  SC_WARRIOR_03_1: {
+    name: "En aguas calientes",
+    description: "Juega 50 esbirros creados por Los fuegos de Zin-Azshari.",
+  },
+  SC_WARRIOR_03_2: {
+    name: "En aguas calientes",
+    description: "Juega 100 esbirros creados por Los fuegos de Zin-Azshari.",
+  },
+  SC_WARRIOR_03_3: {
+    name: "En aguas calientes",
+    description: "Juega 200 esbirros creados por Los fuegos de Zin-Azshari.",
+  },
+
+  SC_NEUTRAL_01_1: {
+    name: "Ejército de Azshara",
+    description: "Invoca 100 Nagas.",
+  },
+  SC_NEUTRAL_01_2: {
+    name: "Ejército de Azshara",
+    description: "Invoca 200 Nagas.",
+  },
+  SC_NEUTRAL_01_3: {
+    name: "Ejército de Azshara",
+    description: "Invoca 300 Nagas.",
+  },
+  SC_NEUTRAL_02_1: {
+    name: "Silenciado",
+    description: "Silencia 30 esbirros con Estrella de mar asfixiante.",
+  },
+  SC_NEUTRAL_02_2: {
+    name: "Silenciado",
+    description: "Silencia 60 esbirros con Estrella de mar asfixiante.",
+  },
+  SC_NEUTRAL_02_3: {
+    name: "Silenciado",
+    description: "Silencia 120 esbirros con Estrella de mar asfixiante.",
+  },
+  SC_NEUTRAL_03_1: {
+    name: "Caracolas en el fondo del mar",
+    description: "Draga 50 veces.",
+  },
+  SC_NEUTRAL_03_2: {
+    name: "Caracolas en el fondo del mar",
+    description: "Draga 100 veces.",
+  },
+  SC_NEUTRAL_03_3: {
+    name: "Caracolas en el fondo del mar",
+    description: "Draga 200 veces.",
+  },
+  SC_NEUTRAL_04_1: {
+    name: "Bajo el mar",
+    description: "Juega 25 cartas Hundidas.",
+  },
+  SC_NEUTRAL_04_2: {
+    name: "Bajo el mar",
+    description: "Juega 50 cartas Hundidas.",
+  },
+  SC_NEUTRAL_05_1: {
+    name: "Fuerza y magia",
+    description:
+      "Reduce en 7 el costo de un hechizo de tu mano con Hechicera bárbara.",
+  },
+  SC_NEUTRAL_06_1: {
+    name: "Boca abajo y al revés",
+    description:
+      "Intercambia 3 cartas de tu mano por cartas que no comenzaron en tu mazo con Sir Finley, guía marítimo.",
+  },
+  SC_NEUTRAL_06_2: {
+    name: "Boca abajo y al revés",
+    description:
+      "Intercambia 7 cartas de tu mano por cartas que no comenzaron en tu mazo con Sir Finley, guía marítimo.",
+  },
+  SC_NEUTRAL_07_1: {
+    name: "Aguanta la respiración",
+    description: "Ataca 60 veces con Buzos.",
+  },
+  SC_NEUTRAL_08_1: {
+    name: "¡Piedra, papel, ESPADA!",
+    description:
+      "Contrarresta un esbirro y un hechizo de costo (5) o más con Maestro de espadas Okani.",
+  },
+  SC_NEUTRAL_09_1: {
+    name: "Lo que acecha en las profundidades",
+    description:
+      "Destruye 40 enemigos con tus esbirros Colosales o sus apéndices.",
+  },
+  SC_NEUTRAL_09_2: {
+    name: "Lo que acecha en las profundidades",
+    description:
+      "Destruye 75 enemigos con tus esbirros Colosales o sus apéndices.",
+  },
+  SC_NEUTRAL_09_3: {
+    name: "Lo que acecha en las profundidades",
+    description:
+      "Destruye 150 enemigos con tus esbirros Colosales o sus apéndices.",
+  },
+  SC_NEUTRAL_10_1: {
+    name: "Universidad de Esquisto",
+    description: "Enseña 16 hechizos diferentes a Nagalitos.",
+  },
+  SC_NEUTRAL_11_1: {
+    name: "Buscaminas",
+    description: "Inflige 120 de daño con Minas navales.",
+  },
+  SC_NEUTRAL_12_1: {
+    name: "Acuario de amalgamas",
+    description:
+      "Descubre esbirros de 10 tipos distintos con Amalgama de las profundidades.",
+  },
+  SC_NEUTRAL_13_1: {
+    name: "Tesoros que alguna vez se perdieron",
+    description:
+      "Juega las 4 Reliquias antiguas de la Reina Azshara.",
+  },
+
+  SC_DEMON_HUNTER_04_1: {
+    name: "Ídolo azshariano",
+    description: "Inflige 50 de daño con un solo Derribar al ídolo.",
+  },
+  SC_DEMON_HUNTER_04_2: {
+    name: "Ídolo azshariano",
+    description: "Inflige 70 de daño con un solo Derribar al ídolo.",
+  },
+  SC_HUNTER_04_1: {
+    name: "Puedes acariciar al perro",
+    description: "Invoca 25 esbirros con K9-0trón.",
+  },
+  SC_HUNTER_04_2: {
+    name: "Puedes acariciar al perro",
+    description: "Invoca 50 esbirros con K9-0trón.",
+  },
+  SC_WARLOCK_04_1: {
+    name: "Nosotros SÍ iniciamos el fuego",
+    description: "Incinera 30 cartas con Inmolar.",
+  },
+  SC_WARLOCK_04_2: {
+    name: "Nosotros SÍ iniciamos el fuego",
     description: "Incinera 15 cartas con Inmolar.",
   },
   SC_DRUID_04_1: {
