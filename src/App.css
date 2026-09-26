@@ -621,6 +621,56 @@
   cursor: not-allowed;
   opacity: 0.55;
 }
+
+.achievement-filter-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-class-field {
+  min-width: 220px;
+}
+
+.hero-class-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 42px 0 16px;
+
+  color: #f8f5ff;
+  background-color: #34275b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.hero-class-field select:hover {
+  background-color: #3b2c66;
+  border-color: rgba(255, 196, 38, 0.45);
+}
+
+.hero-class-field select:focus {
+  outline: none;
+  border-color: #ffc426;
+  box-shadow: 0 0 0 3px rgba(255, 196, 38, 0.15);
+}
+
+.hero-class-field select option {
+  color: #f8f5ff;
+  background-color: #241a45;
+}
+
+
 @media (max-width: 950px) {
   .achievement-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -673,6 +723,23 @@
 
   .language-field select {
     width: 100%;
+  }
+   .achievement-filter-controls {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-class-field {
+    width: 100%;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filters button {
+    flex: 1;
   }
 }
 

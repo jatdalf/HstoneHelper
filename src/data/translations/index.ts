@@ -8,6 +8,9 @@ import { greatDarkBeyondSpanishTranslations } from "./es/great-dark-beyond";
 import { paradiseSpanishTranslations } from "./es/paradise";
 import { whizbangSpanishTranslations } from "./es/whizbang";
 import { badlandsSpanishTranslations } from "./es/badlands";
+import { titansSpanishTranslations } from "./es/titans";
+import { festivalOfLegendsSpanishTranslations } from "./es/festival-of-legends";
+import { lichKingSpanishTranslations } from "./es/lich-king";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
@@ -19,6 +22,9 @@ const spanishTranslations: Record<string, AchievementTranslation> = {
   ...paradiseSpanishTranslations,
   ...whizbangSpanishTranslations,
   ...badlandsSpanishTranslations,
+  ...titansSpanishTranslations,
+  ...festivalOfLegendsSpanishTranslations,
+  ...lichKingSpanishTranslations,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {

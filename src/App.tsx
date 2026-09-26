@@ -40,24 +40,53 @@ function App() {
   const [filter, setFilter] = useState<AchievementFilter>("all");
   const [showAddUser, setShowAddUser] = useState(false);
   type ExpansionFilter = ExpansionId | "all";
+  type HeroClassFilter =
+  | "all"
+  | "Death Knight"
+  | "Demon Hunter"
+  | "Druid"
+  | "Hunter"
+  | "Mage"
+  | "Paladin"
+  | "Priest"
+  | "Rogue"
+  | "Shaman"
+  | "Warlock"
+  | "Warrior"
+  | "Neutral";
   const [expansionFilter, setExpansionFilter] = useState<ExpansionFilter>("violet-hold");
   const completedIds = currentProfile?.completedAchievements ?? [];
-
+  const [heroClassFilter, setHeroClassFilter] = useState<HeroClassFilter>("all");
 // Primero seleccionamos la expansión.
 const expansionAchievements = useMemo(() => {
-  return achievements.filter((achievement) => 
-      expansionFilter === "all" || achievement.expansion === expansionFilter,);
+  return achievements.filter(
+    (achievement) =>
+      expansionFilter === "all" ||
+      achievement.expansion === expansionFilter,
+  );
 }, [expansionFilter]);
 
-// Después aplicamos Todos / Pendientes / Completados.
 const filteredAchievements = useMemo(() => {
   return expansionAchievements.filter((achievement) => {
     const completed = completedIds.includes(achievement.id);
-    if (filter === "completed") return completed;
-    if (filter === "pending") return !completed;
-    return true;
+
+    const matchesStatus =
+      filter === "all" ||
+      (filter === "pending" && !completed) ||
+      (filter === "completed" && completed);
+
+    const matchesHeroClass =
+      heroClassFilter === "all" ||
+      achievement.heroClass === heroClassFilter;
+
+    return matchesStatus && matchesHeroClass;
   });
-}, [expansionAchievements, completedIds, filter]);
+}, [
+  expansionAchievements,
+  completedIds,
+  filter,
+  heroClassFilter,
+]);
 
 const groupedAchievements = useMemo(() => {
   return filteredAchievements.reduce<Record<string, Achievement[]>>(
@@ -468,8 +497,81 @@ return (
                 {filteredAchievements.length} {copy.results}
               </p>
             </div>
+<div className="achievement-filter-controls">
+  <label className="field hero-class-field">
+    <span>
+      {language === "es" ? "Personaje" : "Character"}
+    </span>
 
-            <div className="filters">
+    <select
+      value={heroClassFilter}
+      onChange={(event) =>
+        setHeroClassFilter(
+          event.target.value as HeroClassFilter,
+        )
+      }
+    >
+      <option value="all">
+        {language === "es"
+          ? "Todos los personajes"
+          : "All characters"}
+      </option>
+
+      <option value="Death Knight">
+        {language === "es"
+          ? "Caballero de la Muerte"
+          : "Death Knight"}
+      </option>
+
+      <option value="Demon Hunter">
+        {language === "es"
+          ? "Cazador de Demonios"
+          : "Demon Hunter"}
+      </option>
+
+      <option value="Druid">
+        {language === "es" ? "Druida" : "Druid"}
+      </option>
+
+      <option value="Hunter">
+        {language === "es" ? "Cazador" : "Hunter"}
+      </option>
+
+      <option value="Mage">
+        {language === "es" ? "Mago" : "Mage"}
+      </option>
+
+      <option value="Paladin">
+        {language === "es" ? "Paladín" : "Paladin"}
+      </option>
+
+      <option value="Priest">
+        {language === "es" ? "Sacerdote" : "Priest"}
+      </option>
+
+      <option value="Rogue">
+        {language === "es" ? "Pícaro" : "Rogue"}
+      </option>
+
+      <option value="Shaman">
+        {language === "es" ? "Chamán" : "Shaman"}
+      </option>
+
+      <option value="Warlock">
+        {language === "es" ? "Brujo" : "Warlock"}
+      </option>
+
+      <option value="Warrior">
+        {language === "es" ? "Guerrero" : "Warrior"}
+      </option>
+
+      <option value="Neutral">
+        {language === "es" ? "Neutral" : "Neutral"}
+      </option>
+    </select>
+  </label>
+
+  <div className="filters">
               <button
                 type="button"
                 className={filter === "all" ? "active" : ""}
@@ -496,6 +598,9 @@ return (
                 {copy.completed}
               </button>
             </div>
+</div>
+
+            
           </section>
 
           <div className="achievement-groups">
