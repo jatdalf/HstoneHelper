@@ -11,11 +11,13 @@ import { badlandsSpanishTranslations } from "./es/badlands";
 import { titansSpanishTranslations } from "./es/titans";
 import { festivalOfLegendsSpanishTranslations } from "./es/festival-of-legends";
 import { lichKingSpanishTranslations } from "./es/lich-king";
+import { nathriaSpanishTranslations } from "./es/nathria";
 import { sunkenCitySpanishTranslations } from "./es/sunken-city";
 import { alteracValleySpanishTranslations } from "./es/alterac-valley";
 import { stormwindSpanishTranslations } from "./es/stormwind";
 import { barrensSpanishTranslations } from "./es/barrens";
 import { darkmoonSpanishTranslations } from "./es/darkmoon";
+import { scholomanceSpanishTranslations } from "./es/scholomance";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
@@ -30,11 +32,13 @@ const spanishTranslations: Record<string, AchievementTranslation> = {
   ...titansSpanishTranslations,
   ...festivalOfLegendsSpanishTranslations,
   ...lichKingSpanishTranslations,
+  ...nathriaSpanishTranslations,
   ...sunkenCitySpanishTranslations,
   ...alteracValleySpanishTranslations,
   ...stormwindSpanishTranslations,
   ...barrensSpanishTranslations,
   ...darkmoonSpanishTranslations,
+  ...scholomanceSpanishTranslations,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {

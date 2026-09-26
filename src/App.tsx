@@ -5,8 +5,13 @@ import { AchievementCard } from "./components/AchievementCard";
 import { AddUserModal } from "./components/AddUserModal";
 import { achievements } from "./data/achievements";
 import { useProfiles } from "./hooks/useProfiles";
-import type {Achievement, AchievementFilter, ExpansionId,} from "./types";
 import { useLanguage } from "./i18n/useLanguage";
+import type {
+  Achievement,
+  AchievementFilter,
+  ExpansionId,
+  HeroClass,
+} from "./types";
 
 const HERO_CLASS_ORDER = [
   "Death Knight",
@@ -40,20 +45,7 @@ function App() {
   const [filter, setFilter] = useState<AchievementFilter>("all");
   const [showAddUser, setShowAddUser] = useState(false);
   type ExpansionFilter = ExpansionId | "all";
-  type HeroClassFilter =
-  | "all"
-  | "Death Knight"
-  | "Demon Hunter"
-  | "Druid"
-  | "Hunter"
-  | "Mage"
-  | "Paladin"
-  | "Priest"
-  | "Rogue"
-  | "Shaman"
-  | "Warlock"
-  | "Warrior"
-  | "Neutral";
+type HeroClassFilter = HeroClass | "all";
   const [expansionFilter, setExpansionFilter] = useState<ExpansionFilter>("violet-hold");
   const completedIds = currentProfile?.completedAchievements ?? [];
   const [heroClassFilter, setHeroClassFilter] = useState<HeroClassFilter>("all");
@@ -77,6 +69,7 @@ const filteredAchievements = useMemo(() => {
 
     const matchesHeroClass =
       heroClassFilter === "all" ||
+      achievement.heroClasses?.includes(heroClassFilter) ||
       achievement.heroClass === heroClassFilter;
 
     return matchesStatus && matchesHeroClass;
