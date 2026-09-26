@@ -1,4 +1,17 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const shadowsAchievementClasses: Record<string, HeroClass[]> = {
+  ROS_FEATS_OF_STRENGTH_01_1: ["Druid"],
+  ROS_FEATS_OF_STRENGTH_02_1: ["Hunter"],
+  ROS_FEATS_OF_STRENGTH_03_1: ["Mage"],
+  ROS_FEATS_OF_STRENGTH_04_1: ["Paladin"],
+  ROS_FEATS_OF_STRENGTH_05_1: ["Priest"],
+  ROS_FEATS_OF_STRENGTH_06_1: ["Rogue"],
+  ROS_FEATS_OF_STRENGTH_07_1: ["Shaman"],
+  ROS_FEATS_OF_STRENGTH_08_1: ["Warlock"],
+  ROS_FEATS_OF_STRENGTH_09_1: ["Warrior"],
+  ROS_FEATS_OF_STRENGTH_10_1: ["Neutral"],
+};
 
 const achievement = (
   id: string,
@@ -13,6 +26,7 @@ const achievement = (
   id,
   expansion: "shadows",
   heroClass,
+    heroClasses: shadowsAchievementClasses[id] ?? [],
   name,
   tier,
   description,

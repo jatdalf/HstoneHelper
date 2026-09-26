@@ -44,10 +44,10 @@ export const alteracValleySpanishTranslations: Record<
   string,
   AchievementTranslation
 > = {
-  ...tiers("AV_DEMON_HUNTER_01", "Ajuste de cuentas", [
-    "Invoca 10 demonios con Sigilo del ajuste de cuentas.",
-    "Invoca 20 demonios con Sigilo del ajuste de cuentas.",
-    "Invoca 40 demonios con Sigilo del ajuste de cuentas.",
+  ...tiers("AV_DEMON_HUNTER_01", "Destrozo Final", [
+    "Invoca 10 demonios con Sigilo de juicio.",
+    "Invoca 20 demonios con Sigilo de juicio.",
+    "Invoca 40 demonios con Sigilo de juicio.",
   ]),
 
   AV_DEMON_HUNTER_02_1: entry(
