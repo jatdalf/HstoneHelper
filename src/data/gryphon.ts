@@ -1,4 +1,36 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const gryphonAchievementClasses: Record<string, HeroClass[]> = {
+  GRYPHON_CLASSES_01_1: ["Demon Hunter"],
+  GRYPHON_CLASSES_01_2: ["Demon Hunter"],
+
+  GRYPHON_CLASSES_02_1: ["Druid"],
+  GRYPHON_CLASSES_02_2: ["Druid"],
+
+  GRYPHON_CLASSES_03_1: ["Hunter"],
+  GRYPHON_CLASSES_03_2: ["Hunter"],
+
+  GRYPHON_CLASSES_04_1: ["Mage"],
+  GRYPHON_CLASSES_04_2: ["Mage"],
+
+  GRYPHON_CLASSES_05_1: ["Paladin"],
+  GRYPHON_CLASSES_05_2: ["Paladin"],
+
+  GRYPHON_CLASSES_06_1: ["Priest"],
+  GRYPHON_CLASSES_06_2: ["Priest"],
+
+  GRYPHON_CLASSES_07_1: ["Rogue"],
+  GRYPHON_CLASSES_07_2: ["Rogue"],
+
+  GRYPHON_CLASSES_08_1: ["Shaman"],
+  GRYPHON_CLASSES_08_2: ["Shaman"],
+
+  GRYPHON_CLASSES_09_1: ["Warlock"],
+  GRYPHON_CLASSES_09_2: ["Warlock"],
+
+  GRYPHON_CLASSES_10_1: ["Warrior"],
+  GRYPHON_CLASSES_10_2: ["Warrior"],
+};
 
 const achievement = (
   id: string,
@@ -13,6 +45,7 @@ const achievement = (
   id,
   expansion: "gryphon",
   heroClass,
+  heroClasses: gryphonAchievementClasses[id],
   name,
   tier,
   description,

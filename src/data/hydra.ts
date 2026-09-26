@@ -1,4 +1,53 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const hydraAchievementClasses: Record<string, HeroClass[]> = {
+  HYDRA_CLASSES_01_1: ["Demon Hunter"],
+  HYDRA_CLASSES_01_2: ["Demon Hunter"],
+
+  HYDRA_CLASSES_02_1: ["Druid"],
+  HYDRA_CLASSES_02_2: ["Druid"],
+
+  HYDRA_CLASSES_03_1: ["Mage"],
+  HYDRA_CLASSES_03_2: ["Mage"],
+
+  HYDRA_CLASSES_04_1: ["Paladin"],
+  HYDRA_CLASSES_04_2: ["Paladin"],
+
+  HYDRA_CLASSES_05_1: ["Warrior"],
+  HYDRA_CLASSES_05_2: ["Warrior"],
+
+  HYDRA_CLASSES_06_1: ["Priest"],
+  HYDRA_CLASSES_06_2: ["Priest"],
+
+  HYDRA_CLASSES_07_1: ["Hunter"],
+  HYDRA_CLASSES_07_2: ["Hunter"],
+
+  HYDRA_CLASSES_08_1: ["Shaman"],
+  HYDRA_CLASSES_08_2: ["Shaman"],
+
+  HYDRA_CLASSES_09_1: ["Warlock"],
+  HYDRA_CLASSES_09_2: ["Warlock"],
+
+  HYDRA_CLASSES_10_1: ["Rogue"],
+  HYDRA_CLASSES_10_2: ["Rogue"],
+
+  HYDRA_CLASSES_11_1: ["Death Knight"],
+
+  HYDRA_CLASSES_12_1: ["Death Knight"],
+  HYDRA_CLASSES_12_2: ["Death Knight"],
+
+  HYDRA_CLASSES_13_1: ["Death Knight"],
+  HYDRA_CLASSES_13_2: ["Death Knight"],
+
+  HYDRA_CLASSES_14_1: ["Death Knight"],
+  HYDRA_CLASSES_14_2: ["Death Knight"],
+
+  HYDRA_CLASSES_15_1: ["Death Knight"],
+  HYDRA_CLASSES_16_1: ["Death Knight"],
+
+  HYDRA_CLASSES_17_1: ["Death Knight"],
+  HYDRA_CLASSES_17_2: ["Death Knight"],
+};
 
 const achievement = (
   id: string,
@@ -13,6 +62,7 @@ const achievement = (
   id,
   expansion: "hydra",
   heroClass,
+  heroClasses: hydraAchievementClasses[id],
   name,
   tier,
   description,

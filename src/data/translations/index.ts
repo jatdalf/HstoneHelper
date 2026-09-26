@@ -20,6 +20,10 @@ import { darkmoonSpanishTranslations } from "./es/darkmoon";
 import { scholomanceSpanishTranslations } from "./es/scholomance";
 import { outlandEs } from "./es/outland-es";
 import { dragonsEs } from "./es/dragons-es";
+import { shadowsSpanishTranslations } from "./es/shadows-es";
+import { wolfSpanishTranslations } from "./es/wolf-es";
+import { hydraSpanishTranslations } from "./es/hydra-es";
+import { gryphonSpanishTranslations } from "./es/gryphon-es";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
@@ -43,6 +47,10 @@ const spanishTranslations: Record<string, AchievementTranslation> = {
   ...scholomanceSpanishTranslations,
   ...outlandEs,
   ...dragonsEs,
+  ...shadowsSpanishTranslations,
+  ...wolfSpanishTranslations,
+  ...hydraSpanishTranslations,
+  ...gryphonSpanishTranslations,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {

@@ -1,4 +1,39 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const wolfAchievementClasses: Record<string, HeroClass[]> = {
+  WOLF_CLASSES_01_1: ["Demon Hunter"],
+  WOLF_CLASSES_01_2: ["Demon Hunter"],
+
+  WOLF_CLASSES_02_1: ["Druid"],
+  WOLF_CLASSES_02_2: ["Druid"],
+
+  WOLF_CLASSES_03_1: ["Mage"],
+  WOLF_CLASSES_03_2: ["Mage"],
+
+  WOLF_CLASSES_04_1: ["Paladin"],
+  WOLF_CLASSES_04_2: ["Paladin"],
+
+  WOLF_CLASSES_05_1: ["Warrior"],
+  WOLF_CLASSES_05_2: ["Warrior"],
+
+  WOLF_CLASSES_06_1: ["Priest"],
+  WOLF_CLASSES_06_2: ["Priest"],
+
+  WOLF_CLASSES_07_1: ["Hunter"],
+  WOLF_CLASSES_07_2: ["Hunter"],
+
+  WOLF_CLASSES_08_1: ["Shaman"],
+  WOLF_CLASSES_08_2: ["Shaman"],
+
+  WOLF_CLASSES_09_1: ["Warlock"],
+  WOLF_CLASSES_09_2: ["Warlock"],
+
+  WOLF_CLASSES_10_1: ["Rogue"],
+  WOLF_CLASSES_10_2: ["Rogue"],
+
+  WOLF_CLASSES_11_1: ["Death Knight"],
+  WOLF_CLASSES_11_2: ["Death Knight"],
+};
 
 const achievement = (
   id: string,
@@ -13,6 +48,7 @@ const achievement = (
   id,
   expansion: "wolf",
   heroClass,
+  heroClasses: wolfAchievementClasses[id],
   name,
   tier,
   description,
