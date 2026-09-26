@@ -1,4 +1,60 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const scholomanceAchievementClasses: Record<string, HeroClass[]> = {
+  SCHO_FEATS_OF_STRENGTH_01_1: [
+    "Demon Hunter",
+    "Hunter",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_02_1: [
+    "Druid",
+    "Shaman",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_03_1: [
+    "Druid",
+    "Hunter",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_04_1: [
+    "Mage",
+    "Rogue",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_05_1: [
+    "Paladin",
+    "Priest",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_06_1: [
+    "Priest",
+    "Warlock",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_07_1: [
+    "Rogue",
+    "Warrior",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_08_1: [
+    "Mage",
+    "Shaman",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_09_1: [
+    "Demon Hunter",
+    "Warlock",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_10_1: [
+    "Paladin",
+    "Warrior",
+  ],
+
+  SCHO_FEATS_OF_STRENGTH_11_1: [
+    "Neutral",
+  ],
+};
 
 const achievement = (
   id: string,
@@ -12,7 +68,8 @@ const achievement = (
 ): Achievement => ({
   id,
   expansion: "scholomance",
-  heroClass,
+  heroClass: heroClass as Achievement["heroClass"],
+  heroClasses: scholomanceAchievementClasses[id] ?? [],
   name,
   tier,
   description,

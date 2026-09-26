@@ -45,9 +45,24 @@ export interface Achievement {
   xp: number;
   points: number;
   cards?: string[];
+  heroClasses?: HeroClass[];
 }
 export interface UserProfile {
   id: string;
   name: string;
   completedAchievements: string[];
 }
+export type HeroClass =
+  | "Death Knight"
+  | "Demon Hunter"
+  | "Druid"
+  | "Hunter"
+  | "Mage"
+  | "Paladin"
+  | "Priest"
+  | "Rogue"
+  | "Shaman"
+  | "Warlock"
+  | "Warrior"
+  | "Neutral";
+
