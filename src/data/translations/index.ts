@@ -18,6 +18,7 @@ import { stormwindSpanishTranslations } from "./es/stormwind";
 import { barrensSpanishTranslations } from "./es/barrens";
 import { darkmoonSpanishTranslations } from "./es/darkmoon";
 import { scholomanceSpanishTranslations } from "./es/scholomance";
+import { outlandEs } from "./es/outland-es";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
   ...violetHoldSpanishTranslations,
@@ -39,6 +40,7 @@ const spanishTranslations: Record<string, AchievementTranslation> = {
   ...barrensSpanishTranslations,
   ...darkmoonSpanishTranslations,
   ...scholomanceSpanishTranslations,
+  ...outlandEs,
 };
 
 export function translateAchievement( achievement: Achievement, language: Language,): AchievementTranslation {
