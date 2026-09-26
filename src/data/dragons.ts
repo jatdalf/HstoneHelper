@@ -1,4 +1,17 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const dragonsAchievementClasses: Record<string, HeroClass[]> = {
+  DOD_FEATS_OF_STRENGTH_01_1: ["Druid"],
+  DOD_FEATS_OF_STRENGTH_02_1: ["Hunter"],
+  DOD_FEATS_OF_STRENGTH_03_1: ["Mage"],
+  DOD_FEATS_OF_STRENGTH_04_1: ["Paladin"],
+  DOD_FEATS_OF_STRENGTH_05_1: ["Priest"],
+  DOD_FEATS_OF_STRENGTH_06_1: ["Rogue"],
+  DOD_FEATS_OF_STRENGTH_07_1: ["Shaman"],
+  DOD_FEATS_OF_STRENGTH_08_1: ["Warlock"],
+  DOD_FEATS_OF_STRENGTH_09_1: ["Warrior"],
+  DOD_FEATS_OF_STRENGTH_10_1: ["Neutral"],
+};
 
 const achievement = (
   id: string,
@@ -13,6 +26,7 @@ const achievement = (
   id,
   expansion: "dragons",
   heroClass,
+  heroClasses: dragonsAchievementClasses[id] ?? [],
   name,
   tier,
   description,

@@ -1,4 +1,17 @@
-import type { Achievement } from "../types";
+import type { Achievement, HeroClass } from "../types";
+
+const uldumAchievementClasses: Record<string, HeroClass[]> = {
+  ULD_FEATS_OF_STRENGTH_01_1: ["Druid"],
+  ULD_FEATS_OF_STRENGTH_02_1: ["Hunter"],
+  ULD_FEATS_OF_STRENGTH_03_1: ["Mage"],
+  ULD_FEATS_OF_STRENGTH_04_1: ["Paladin"],
+  ULD_FEATS_OF_STRENGTH_05_1: ["Priest"],
+  ULD_FEATS_OF_STRENGTH_06_1: ["Rogue"],
+  ULD_FEATS_OF_STRENGTH_07_1: ["Shaman"],
+  ULD_FEATS_OF_STRENGTH_08_1: ["Warlock"],
+  ULD_FEATS_OF_STRENGTH_09_1: ["Warrior"],
+  ULD_FEATS_OF_STRENGTH_10_1: ["Neutral"],
+};
 
 const achievement = (
   id: string,
@@ -13,6 +26,7 @@ const achievement = (
   id,
   expansion: "uldum",
   heroClass,
+    heroClasses: uldumAchievementClasses[id] ?? [],
   name,
   tier,
   description,
