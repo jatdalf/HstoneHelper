@@ -133,15 +133,15 @@ export const cataclysmSpanishTranslations: Record<
   CT_WARLOCK_01_1: {
     name: "Conde de las alturas",
     description:
-      "Juega un Duque de las profundidades 10/10 o superior.",
-    cards: ["Duque de las profundidades"],
+      "Juega un Duque del Inframundo 10/10 o superior.",
+    cards: ["Duque del Inframundo"],
   },
 
   CT_WARLOCK_01_2: {
     name: "Conde de las alturas",
     description:
-      "Juega un Duque de las profundidades 20/20 o superior.",
-    cards: ["Duque de las profundidades"],
+      "Juega un Duque del Inframundo20/20 o superior.",
+    cards: ["Duque del Inframundo"],
   },
 
   CT_WARRIOR_01_1: {
