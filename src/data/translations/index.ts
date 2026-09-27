@@ -18,7 +18,7 @@ import { stormwindSpanishTranslations } from "./es/stormwind";
 import { barrensSpanishTranslations } from "./es/barrens";
 import { darkmoonSpanishTranslations } from "./es/darkmoon";
 import { scholomanceSpanishTranslations } from "./es/scholomance";
-import { uldumEs } from "./es/uldum-es";
+import { uldumSpanishTranslations } from "./es/uldum";
 import { outlandEs } from "./es/outland-es";
 import { dragonsEs } from "./es/dragons-es";
 import { shadowsSpanishTranslations } from "./es/shadows-es";
@@ -46,7 +46,7 @@ const spanishTranslations: Record<string, AchievementTranslation> = {
   ...barrensSpanishTranslations,
   ...darkmoonSpanishTranslations,
   ...scholomanceSpanishTranslations,
-  ...uldumEs,
+  ...uldumSpanishTranslations,
   ...outlandEs,
   ...dragonsEs,
   ...shadowsSpanishTranslations,

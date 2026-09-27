@@ -1,4 +1,4 @@
-export const uldumEs = {
+export const uldumSpanishTranslations = {
   ULD_FEATS_OF_STRENGTH_01_1: {
     name: "¿...abejas?",
     description:
