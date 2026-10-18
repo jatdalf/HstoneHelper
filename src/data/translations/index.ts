@@ -1,4 +1,5 @@
 import type { Achievement, AchievementTranslation, Language, } from "../../types";
+import { blackEmpireSpanishTranslations } from "./es/black-empire-es";
 import { violetHoldSpanishTranslations } from "./es/violet-hold";
 import { cataclysmSpanishTranslations } from "./es/cataclysm";
 import { timeTravelSpanishTranslations } from "./es/time-travel";
@@ -27,6 +28,7 @@ import { hydraSpanishTranslations } from "./es/hydra-es";
 import { gryphonSpanishTranslations } from "./es/gryphon-es";
 
 const spanishTranslations: Record<string, AchievementTranslation> = {
+  ...blackEmpireSpanishTranslations,
   ...violetHoldSpanishTranslations,
   ...cataclysmSpanishTranslations,
   ...timeTravelSpanishTranslations,

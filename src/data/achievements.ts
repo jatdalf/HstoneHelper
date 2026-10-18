@@ -1,4 +1,5 @@
 import type { Achievement } from "../types";
+import { blackEmpireAchievements } from "./black-empire";
 import { violetHoldAchievements } from "./violet-hold";
 import { cataclysmAchievements } from "./cataclysm";
 import { timeTravelAchievements } from "./timetravel"
@@ -27,6 +28,7 @@ import { hydraAchievements } from "./hydra";
 import { gryphonAchievements } from "./gryphon";
 
 export const achievements: Achievement[] = [
+  ...blackEmpireAchievements,
   ...violetHoldAchievements,
   ...cataclysmAchievements,
   ...timeTravelAchievements,
