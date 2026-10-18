@@ -12,6 +12,7 @@ import type {
   ExpansionId,
   HeroClass,
 } from "./types";
+import { expansionOptions } from "./components/expansions";
 
 const HERO_CLASS_ORDER = [
   "Death Knight",
@@ -31,6 +32,9 @@ const HERO_CLASS_ORDER = [
   "Feats of Strength",
 ];
 
+const DEFAULT_EXPANSION: ExpansionId =
+  expansionOptions[0]?.id ?? "black-empire";
+
 function App() {
   const { language, setLanguage } = useLanguage();
   const {
@@ -46,7 +50,8 @@ function App() {
   const [showAddUser, setShowAddUser] = useState(false);
   type ExpansionFilter = ExpansionId | "all";
 type HeroClassFilter = HeroClass | "all";
-  const [expansionFilter, setExpansionFilter] = useState<ExpansionFilter>("violet-hold");
+  const [expansionFilter, setExpansionFilter] =
+  useState<ExpansionFilter>(DEFAULT_EXPANSION);
   const completedIds = currentProfile?.completedAchievements ?? [];
   const [heroClassFilter, setHeroClassFilter] = useState<HeroClassFilter>("all");
 // Primero seleccionamos la expansión.
@@ -64,15 +69,15 @@ const filteredAchievements = useMemo(() => {
 
     const matchesStatus =
       filter === "all" ||
-      (filter === "pending" && !completed) ||
-      (filter === "completed" && completed);
+      (filter === "completed" && completed) ||
+      (filter === "pending" && !completed);
 
-    const matchesHeroClass =
+    const matchesHero =
       heroClassFilter === "all" ||
-      achievement.heroClasses?.includes(heroClassFilter) ||
-      achievement.heroClass === heroClassFilter;
+      achievement.heroClass === heroClassFilter ||
+      achievement.heroClasses?.includes(heroClassFilter);
 
-    return matchesStatus && matchesHeroClass;
+    return matchesStatus && matchesHero;
   });
 }, [
   expansionAchievements,
@@ -157,141 +162,6 @@ const copy = {
   },
 }[language];
 
-const expansionOptions: Array<{
-  value: ExpansionFilter;
-  es: string;
-  en: string;
-}> = [
-  {
-    value: "violet-hold",
-    es: "Fuga del Bastión Violeta",
-    en: "Violet Hold",
-  },{
-    value: "cataclysm",
-    es: "Cataclismo",
-    en: "Cataclysm",
-  },{
-    value: "time-travel",
-    es: "A través de las líneas temporales",
-    en: "Across the Timeways",
-  },
-  {
-    value: "lost-city",
-    es: "La Ciudad Perdida de Un'Goro",
-    en: "The Lost City of Un'Goro",
-  },
-  {
-    value: "emerald-dream",
-    es: "En el Sueño Esmeralda",
-    en: "Into the Emerald Dream",
-  },
-  {
-    value: "great-dark-beyond",
-    es: "La Gran Oscuridad",
-    en: "The Great Dark Beyond",
-  },
-  {
-    value: "paradise",
-    es: "Peligros en el Paraíso",
-    en: "Perils in Paradise",
-  },
-  {
-    value: "whizbang",
-    es: "Taller de Miniaturización de Colifero",
-    en: "Whizbang's Workshop",
-  },
-  {
-    value: "badlands",
-    es: "Duelo en las Tierras Inhóspitas",
-    en: "Showdown in the Badlands",
-  },
-  {
-    value: "titans",
-    es: "TITANES",
-    en: "Titans",
-  },
-  {
-    value: "festival-of-legends",
-    es: "Festival de Leyendas",
-    en: "Festival of Legends",
-  },
-  {
-    value: "lich-king",
-    es: "Marcha del Rey Exánime",
-    en: "March of the Lich King",
-  },
-  {
-    value: "nathria",
-    es: "Asesinato en el Castillo Nathria",
-    en: "Murder at Castle Nathria",
-  },
-  {
-    value: "sunken-city",
-    es: "Viaje a la Ciudad Sumergida",
-    en: "Voyage to the Sunken City",
-  },
-  {
-    value: "alterac-valley",
-    es: "Divididos en el Valle de Alterac",
-    en: "Fractured in Alterac Valley",
-  },
-  {
-    value: "stormwind",
-    es: "Unidos en Ventormenta",
-    en: "United in Stormwind",
-  },
-  {
-    value: "barrens",
-    es: "Forjados en Los Baldíos",
-    en: "Forged in the Barrens",
-  },
-  {
-    value: "darkmoon",
-    es: "Locura en la Feria de la Luna Negra",
-    en: "Madness at the Darkmoon Faire",
-  },
-  {
-    value: "scholomance",
-    es: "Academia Scholomance",
-    en: "Scholomance Academy",
-  },
-  {
-    value: "outland",
-    es: "Cenizas de Terrallende",
-    en: "Ashes of Outland",
-  },
-  {
-    value: "dragons",
-    es: "El Descenso de los Dragones",
-    en: "Descent of Dragons",
-  },
-  {
-    value: "uldum",
-    es: "Salvadores de Uldum",
-    en: "Saviors of Uldum",
-  },
-  {
-    value: "shadows",
-    es: "El Auge de las Sombras",
-    en: "Rise of Shadows",
-  },
-  {
-    value: "wolf",
-    es: "Esencial — Año del Lobo",
-    en: "Core — Year of the Wolf",
-  },
-  {
-    value: "hydra",
-    es: "Esencial — Año de la Hidra",
-    en: "Core — Year of the Hydra",
-  },
-  {
-    value: "gryphon",
-    es: "Esencial — Año del Grifo",
-    en: "Core — Year of the Gryphon",
-  },
-];
-
 const classLabels: Record<string, string> = {
   Classes: language === "es" ? "Clases" : "Classes",
   Neutral: language === "es" ? "Neutral" : "Neutral",
@@ -324,7 +194,7 @@ return (
           <label className="field">
             <span>{copy.expansion}</span>
 
-            <select
+<select
   className="expansionSelect"
   value={expansionFilter}
   onChange={(event) =>
@@ -334,12 +204,17 @@ return (
   }
 >
   {expansionOptions.map((expansion) => (
-    <option key={expansion.value} value={expansion.value}>
-      {expansion[language]}
+    <option
+      key={expansion.id}
+      value={expansion.id}
+    >
+      {expansion.name[language]}
     </option>
   ))}
 
-  <option value="all">{copy.allExpansions}</option>
+  <option value="all">
+    {copy.allExpansions}
+  </option>
 </select>
           </label>
 
@@ -621,17 +496,16 @@ return (
 
                   <div className="achievement-grid">
                     {classAchievements.map((achievement) => (
-                      <AchievementCard
-                        key={achievement.id}
-                        achievement={achievement}
-                        completed={completedIds.includes(
-                          achievement.id,
-                        )}
-                        language={language}
-                        onToggle={() =>
-                          toggleAchievement(achievement.id)
-                        }
-                      />
+                    <AchievementCard
+  key={achievement.id}
+  achievement={achievement}
+  language={language}
+  completed={completedIds.includes(achievement.id)}
+  showExpansion={expansionFilter === "all"}
+  onToggle={() =>
+    toggleAchievement(achievement.id)
+  }
+/>
                     ))}
                   </div>
                 </section>

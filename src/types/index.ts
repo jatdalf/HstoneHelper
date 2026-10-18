@@ -1,34 +1,26 @@
-export type AchievementFilter = "all" | "pending" | "completed";
-export type ExpansionId =
-  | "black-empire"
-  | "violet-hold"
-  | "cataclysm"
-  | "time-travel"
-  | "emerald-dream"
-  | "badlands" 
-  | "lost-city"
-  | "whizbang"
-  | "titans"
-  | "paradise"
-  | "great-dark-beyond"
-  | "festival-of-legends"
-  | "lich-king"
-  | "nathria"
-  | "sunken-city"
-  | "alterac-valley"
-  | "stormwind"
-  | "barrens"
-  | "darkmoon"
-  | "scholomance"
-  | "outland"
-  | "dragons"
-  | "uldum"
-  | "shadows"
-  | "wolf"
-  | "hydra"
-  | "gryphon"
-;
+import type { ExpansionId } from "./ExpansionId";
+export type { ExpansionId } from "./ExpansionId";
+
+export type AchievementFilter =
+  | "all"
+  | "pending"
+  | "completed";
+
 export type Language = "es" | "en";
+
+export type HeroClass =
+  | "Death Knight"
+  | "Demon Hunter"
+  | "Druid"
+  | "Hunter"
+  | "Mage"
+  | "Paladin"
+  | "Priest"
+  | "Rogue"
+  | "Shaman"
+  | "Warlock"
+  | "Warrior"
+  | "Neutral";
 
 export interface AchievementTranslation {
   name: string;
@@ -48,22 +40,9 @@ export interface Achievement {
   cards?: string[];
   heroClasses?: HeroClass[];
 }
+
 export interface UserProfile {
   id: string;
   name: string;
   completedAchievements: string[];
 }
-export type HeroClass =
-  | "Death Knight"
-  | "Demon Hunter"
-  | "Druid"
-  | "Hunter"
-  | "Mage"
-  | "Paladin"
-  | "Priest"
-  | "Rogue"
-  | "Shaman"
-  | "Warlock"
-  | "Warrior"
-  | "Neutral";
-
