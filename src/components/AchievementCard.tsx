@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { translateAchievement } from "../data/translations";
 import type { Achievement, Language } from "../types";
-import expansions from "../expansions";
+import { getExpansionOption } from "./expansions";
 
 interface AchievementCardProps {
   achievement: Achievement;
@@ -23,14 +23,18 @@ export function AchievementCard({
     language,
   );
 
+  const expansion = getExpansionOption(achievement.expansion);
+
   const tierLabel = language === "es" ? "Nivel" : "Tier";
+
   const translatedCards = translatedAchievement.cards;
-  const cardsLabel = translatedCards && translatedCards.length > 0
-      ? translatedCards.join(", ") : language === "es"
+
+  const cardsLabel =
+    translatedCards && translatedCards.length > 0
+      ? translatedCards.join(", ")
+      : language === "es"
         ? "Sin carta específica"
         : "No specific card";
-
-    const pointsLabel = language === "es" ? "pts" : "pts";
 
   return (
     <article
@@ -65,28 +69,24 @@ export function AchievementCard({
       </label>
 
       <footer className="achievement-footer">
-  <div className="achievement-references">
-    <span className="achievement-cards">
-      {achievement.cards?.join(", ") ??
-        (language === "es"
-          ? "Sin carta específica"
-          : "No specific card")}
-    </span>
+        <div className="achievement-references">
+          <span className="achievement-cards">
+            {cardsLabel}
+          </span>
 
-    {showExpansion && expansion && (
-      <span
-        className="achievement-expansion"
-        title={expansion.name[language]}
-      >
-        {expansion.shortName[language]}
-      </span>
-    )}
-  </div>
-
-  <strong>
-    {achievement.xp} XP · {achievement.points} pts
-  </strong>
-</footer>
+          {showExpansion && expansion && (
+            <span
+              className="achievement-expansion"
+              title={expansion.name[language]}
+            >
+              {expansion.shortName[language]}
+            </span>
+          )}
+        </div>
+        <strong>
+          {achievement.xp} XP · {achievement.points} pts
+        </strong>
+      </footer>
     </article>
   );
 }

@@ -1,4 +1,4 @@
-import type { ExpansionId } from "../src/types/ExpansionId";
+import type { ExpansionId } from "../types/ExpansionId";
 
 export type Language = "es" | "en";
 
