@@ -767,3 +767,42 @@
     flex-direction: column;
   }
 }
+.achievement-references {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.achievement-cards {
+  min-width: 0;
+  color: var(--text-muted);
+}
+
+.achievement-expansion {
+  display: inline-flex;
+  align-items: center;
+  max-width: 175px;
+  padding: 0.25rem 0.55rem;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #f8d45c;
+  background: rgba(248, 196, 45, 0.1);
+  border: 1px solid rgba(248, 196, 45, 0.28);
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: help;
+}
+
+@media (max-width: 650px) {
+  .achievement-expansion {
+    max-width: 135px;
+  }
+}

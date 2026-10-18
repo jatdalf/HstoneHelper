@@ -1,5 +1,6 @@
 export type AchievementFilter = "all" | "pending" | "completed";
 export type ExpansionId =
+  | "black-empire"
   | "violet-hold"
   | "cataclysm"
   | "time-travel"
